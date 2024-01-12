@@ -1,0 +1,47 @@
+<!DOCTYPE html">
+<html>
+<head>
+<link rel = "stylesheet" href="{{url_for('static', filename= 'style.css')}}" type ="text/css" media = "all" />
+<script src ="{{url_for('static', filename = 'jquery-3.6.0.js') }}"></script>
+<head>
+
+<body>
+
+    <div id="shell" height=auto>
+        <div id="header">
+          <h1 class="title"><a href="/">Job Advertisements</a></h1>
+          <div class="top-bar">
+            <div class="links">    {% block links %}       {% endblock %}  </div>
+            <div class="cl">&nbsp;</div>
+            <div id="search">
+              <form action="/search" method="POST">
+                <label for="search-string">SEARCH</label>
+                <div class="fields">
+                  <input type="text" name="searchword" class="field" />
+                  <input type="submit" name="search" value="" class="submit" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="navigation">
+<ul>
+    <li> <a href="/Accounting_Finance"> Accounting_Finance</a></li>
+    <li> <a href="/Engineering">Engineering</a></li>
+    <li> <a href="/health_care"> Healthcare_Nursing</a></li>
+    <li> <a href="/sales"> Sales</a></li>
+    <li> <a href="/admin"> Admin</a></li>
+    <li> <a href="/about"> About</a></li>
+
+</ul>
+{% block body %}
+{% endblock %}
+
+{% block script %}
+{% endblock %}
+
+
+
+
+</body>
+</html>
